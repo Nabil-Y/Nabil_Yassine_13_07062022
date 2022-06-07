@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 /**
  * Feature component props
@@ -20,6 +20,10 @@ export interface Ifeature {
    * Feature description
    */
   text: string;
+  /**
+   * Optional unique key for mapping
+   */
+  key?: string;
 }
 
 /**
@@ -35,7 +39,7 @@ export interface Ibutton {
    */
   className?: string;
   /**
-   * Add function to the button
+   * Click event handler
    */
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
@@ -70,4 +74,26 @@ export interface Iinput {
    * Input type
    */
   type: string;
+  /**
+   * Change event handler
+   */
+  onChange?: React.ChangeEventHandler<HTMLElement>;
+  /**
+   * Optional unique key for mapping
+   */
+  key?: string;
+}
+
+/**
+ * Checkbox component props
+ */
+export interface Iuser {
+  /**
+   * User firstName
+   */
+  firstName: string;
+  /**
+   * User lastName
+   */
+  lastName: string;
 }

@@ -32,6 +32,7 @@ const Home = () => {
       <div className="flex flex-col home:flex-row">
         {features.map((item) => (
           <Feature
+            key={Date.now() + item.altIcon}
             icon={item.icon}
             altIcon={item.altIcon}
             title={item.title}
