@@ -15,6 +15,13 @@ module.exports = {
         black: "#000",
         grey: "#CCC",
       },
+      backgroundPosition: {
+        heroPosition: "0 -50px",
+        heroPositionBig: "0 33%",
+      },
+      backgroundImage: {
+        heroImg: "url('/src/assets/bank-tree.jpeg')",
+      },
     },
   },
   plugins: [],
