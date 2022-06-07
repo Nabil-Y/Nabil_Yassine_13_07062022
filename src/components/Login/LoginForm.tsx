@@ -6,7 +6,7 @@ import Input from "../UI/Input";
 const LoginForm = () => {
   return (
     <section className=" my-0 mx-auto mt-12 box-border w-[300px] bg-white p-8">
-      <img src={userIcon} alt="User Icon" className="mx-auto h-8 w-8" />
+      <img src={userIcon} alt="User Icon" className="mx-auto h-6 w-6" />
       <h2 className="py-4 text-xl font-bold">Sign In</h2>
       <form>
         <Input id="username" label="Username" type="text" />

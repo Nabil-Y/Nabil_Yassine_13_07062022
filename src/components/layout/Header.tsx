@@ -1,8 +1,12 @@
 import logo from "../../assets/argentBankLogo.png";
 import userIcon from "../../assets/icon-user.png";
-import { Link } from "react-router-dom";
+import logoutIcon from "../../assets/icon-logout.png";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const { pathname } = useLocation();
+  const isUserPage = pathname === "/user";
+
   return (
     <header>
       <nav
@@ -17,15 +21,23 @@ const Header = () => {
           />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
-        <>
+        <div className="flex items-center">
+          <img src={userIcon} alt="User Icon" className="h-6 w-6" />
+          {isUserPage ? <div className="mr-4">Tony</div> : ""}
           <Link
             className="mr-2 flex flex-wrap items-center font-bold hover:underline"
             to="/login"
           >
-            <img src={userIcon} alt="User Icon" className="h-8 w-8" />
-            Sign In
+            {isUserPage ? (
+              <div className="flex items-center">
+                <img src={logoutIcon} alt="Log Out Icon" className=" h-6 w-6" />
+                Sign out
+              </div>
+            ) : (
+              "Sign In"
+            )}
           </Link>
-        </>
+        </div>
       </nav>
     </header>
   );

@@ -83,17 +83,3 @@ export interface Iinput {
    */
   key?: string;
 }
-
-/**
- * Checkbox component props
- */
-export interface Iuser {
-  /**
-   * User firstName
-   */
-  firstName: string;
-  /**
-   * User lastName
-   */
-  lastName: string;
-}
