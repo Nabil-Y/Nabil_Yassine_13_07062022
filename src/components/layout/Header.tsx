@@ -22,8 +22,10 @@ const Header = () => {
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
         <div className="flex items-center">
-          <img src={userIcon} alt="User Icon" className="h-6 w-6" />
-          {isUserPage ? <div className="mr-4">Tony</div> : ""}
+          <Link to="/user" className="flex">
+            <img src={userIcon} alt="User Icon" className="h-6 w-6" />
+            {isUserPage ? <div className="mr-4">Tony</div> : ""}
+          </Link>
           <Link
             className="mr-2 flex flex-wrap items-center font-bold hover:underline"
             to="/login"
