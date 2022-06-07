@@ -1,8 +1,21 @@
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
+/**
+ * App function
+ * @returns main content of React App
+ */
 const App = () => {
   return (
-    <div>
-      <h1 className=" text-4xl text-teal-900 user:text-primary">Hello World</h1>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
+    </>
   );
 };
 
