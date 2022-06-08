@@ -3,6 +3,13 @@ import Button from "../UI/Button";
 import Checkbox from "../UI/Checkbox";
 import Input from "../UI/Input";
 
+import { userLogin, getUserData } from "../../utils/API_functions";
+import { useAppSelector } from "../../store/hooks";
+
+const token = await userLogin("tony@stark.com", "password123");
+const userData = await getUserData(token);
+console.log(userData);
+
 /**
  * LoginForm function
  * @returns the login form component

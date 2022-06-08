@@ -1,5 +1,14 @@
 import React, { ReactNode } from "react";
 
+/*
+  1- component Props
+  2- Redux initial states
+*/
+
+/*
+  1- ComponentProps
+*/
+
 /**
  * Feature component props
  */
@@ -108,4 +117,66 @@ export interface IuserAccount {
    * Optional unique key for mapping
    */
   key?: string;
+}
+
+/*
+  2- Redux initial states
+*/
+
+/**
+ * Login slice initial state typing
+ */
+export interface loginState {
+  /**
+   * True if the user is logged in
+   */
+  isLoggedIn: boolean;
+  /**
+   * Auth token, empty string if not logged in
+   */
+  token: string;
+}
+
+/**
+ * User slice initial state typing
+ */
+export interface userState {
+  /**
+   * User email
+   */
+  email: string;
+  /**
+   * User firstName
+   */
+  firstName: string;
+  /**
+   * User lastName
+   */
+  lastName: string;
+  /**
+   * Date and time of user account creation
+   */
+  createdAt: string;
+  /**
+   * Date and time of last user account update
+   */
+  updatedAt: string;
+  /**
+   * User id
+   */
+  id: string;
+}
+
+/**
+ * Response to update username
+ */
+export interface usernameChange {
+  /**
+   * New user firstName
+   */
+  firstName: string;
+  /**
+   * New user lastName
+   */
+  lastName: string;
 }
