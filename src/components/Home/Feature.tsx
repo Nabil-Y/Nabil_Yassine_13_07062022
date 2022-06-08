@@ -1,5 +1,10 @@
 import { Ifeature } from "../../types";
 
+/**
+ * Feature function
+ * @param props contains feature properties
+ * @returns the feature component
+ */
 const Feature = (props: Ifeature) => {
   const { icon, altIcon, title, text } = props;
   return (

@@ -1,5 +1,10 @@
 import Button from "../UI/Button";
+import EditUsername from "./EditUsername";
 
+/**
+ * ProfileHero function
+ * @returns the profile hero component
+ */
 const ProfileHero = () => {
   return (
     <div className="mb-8 text-white">
@@ -8,7 +13,13 @@ const ProfileHero = () => {
         <br />
         Tony Jarvis!
       </h2>
-      <Button className="mx-auto w-auto p-[10px] text-sm no-underline">
+      <div className="">
+        <EditUsername />
+      </div>
+      <Button
+        type="button"
+        className="mx-auto w-auto p-[10px] text-sm no-underline"
+      >
         Edit Name
       </Button>
     </div>

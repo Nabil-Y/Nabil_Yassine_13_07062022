@@ -1,5 +1,10 @@
 import { Iinput } from "../../types";
 
+/**
+ * Input function
+ * @param props contains input properties
+ * @returns the input component
+ */
 const Input = (props: Iinput) => {
   const { id, label, type } = props;
   return (
@@ -10,7 +15,7 @@ const Input = (props: Iinput) => {
       <input
         type={type}
         id={id}
-        className="border border-secondary p-1 text-lg"
+        className="border border-secondary p-1 text-lg text-black"
       />
     </div>
   );

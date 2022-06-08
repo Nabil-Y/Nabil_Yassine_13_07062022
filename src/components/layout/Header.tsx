@@ -3,6 +3,10 @@ import userIcon from "../../assets/icon-user.png";
 import logoutIcon from "../../assets/icon-logout.png";
 import { Link, useLocation } from "react-router-dom";
 
+/**
+ * Header function
+ * @returns the header component
+ */
 const Header = () => {
   const { pathname } = useLocation();
   const isUserPage = pathname === "/user";
@@ -24,7 +28,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link to="/user" className="flex">
             <img src={userIcon} alt="User Icon" className="h-6 w-6" />
-            {isUserPage ? <div className="mr-4">Tony</div> : ""}
+            {isUserPage ? <div className="mr-6">Tony</div> : ""}
           </Link>
           <Link
             className="mr-2 flex flex-wrap items-center font-bold hover:underline"

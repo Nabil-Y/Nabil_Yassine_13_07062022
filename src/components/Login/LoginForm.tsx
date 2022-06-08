@@ -3,6 +3,10 @@ import Button from "../UI/Button";
 import Checkbox from "../UI/Checkbox";
 import Input from "../UI/Input";
 
+/**
+ * LoginForm function
+ * @returns the login form component
+ */
 const LoginForm = () => {
   return (
     <section className=" my-0 mx-auto mt-12 box-border w-[300px] bg-white p-8">
@@ -12,7 +16,7 @@ const LoginForm = () => {
         <Input id="username" label="Username" type="text" />
         <Input id="password" label="Password" type="password" />
         <Checkbox id="remember-me" label="Remember me" />
-        <Button>Sign In</Button>
+        <Button type="button">Sign In</Button>
       </form>
     </section>
   );

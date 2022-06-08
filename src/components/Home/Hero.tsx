@@ -1,3 +1,7 @@
+/**
+ * Hero function
+ * @returns the home hero component
+ */
 const Hero = () => {
   return (
     <div

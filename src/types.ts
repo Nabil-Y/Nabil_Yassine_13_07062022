@@ -42,6 +42,10 @@ export interface Ibutton {
    * Click event handler
    */
   onClick?: React.MouseEventHandler<HTMLElement>;
+  /**
+   * Button type
+   */
+  type: "button" | "submit" | "reset" | undefined;
 }
 
 /**
@@ -78,6 +82,28 @@ export interface Iinput {
    * Change event handler
    */
   onChange?: React.ChangeEventHandler<HTMLElement>;
+  /**
+   * Optional unique key for mapping
+   */
+  key?: string;
+}
+
+/**
+ * Checkbox component props
+ */
+export interface IuserAccount {
+  /**
+   * Account title
+   */
+  title: string;
+  /**
+   * Account amount
+   */
+  amount: string;
+  /**
+   * Account description
+   */
+  text: string;
   /**
    * Optional unique key for mapping
    */

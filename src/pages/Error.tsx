@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Error function
+ * @returns the error page
+ */
 const Error = () => {
   return (
     <main className=" flex-[1] bg-secondary-dark text-center text-2xl text-white">
