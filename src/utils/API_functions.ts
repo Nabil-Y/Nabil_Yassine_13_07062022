@@ -51,7 +51,10 @@ export const updateUserState = async (
       },
       data: JSON.stringify({ firstName, lastName }),
     });
-    // Complete function after
+    const status = await response.status;
+    if (status) {
+      return status;
+    }
   } catch (error) {
     console.log(error);
   }

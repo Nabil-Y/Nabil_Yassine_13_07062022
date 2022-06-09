@@ -1,5 +1,4 @@
 import { useAppSelector } from "../../store/hooks";
-import Button from "../UI/Button";
 import EditUsername from "./EditUsername";
 
 /**
@@ -16,15 +15,7 @@ const ProfileHero = () => {
         <br />
         {`${firstName} ${lastName}`}!
       </h2>
-      <div className="">
-        <EditUsername />
-      </div>
-      <Button
-        type="button"
-        className="mx-auto w-auto p-[10px] text-sm no-underline"
-      >
-        Edit Name
-      </Button>
+      <EditUsername />
     </div>
   );
 };

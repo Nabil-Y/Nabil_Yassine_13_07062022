@@ -1,13 +1,13 @@
 import { useState } from "react";
-import userIcon from "../../assets/icon-user.png";
-import Button from "../UI/Button";
-import Checkbox from "../UI/Checkbox";
-import Input from "../UI/Input";
 import { useNavigate } from "react-router-dom";
 import { userLogin, getUserState } from "../../utils/API_functions";
 import { useAppDispatch } from "../../store/hooks";
 import { login } from "../../store/slices/loginSlice";
 import { getUserData } from "../../store/slices/userSlice";
+import userIcon from "../../assets/icon-user.png";
+import Button from "../UI/Button";
+import Checkbox from "../UI/Checkbox";
+import Input from "../UI/Input";
 
 /**
  * LoginForm function
@@ -21,9 +21,8 @@ const LoginForm = () => {
 
   const submitHandler = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    console.log(username, " ", password);
-    const token = await userLogin(username, password);
 
+    const token = await userLogin(username, password);
     if (token) {
       dispatch(login(token));
       const userData = await getUserState(token);
