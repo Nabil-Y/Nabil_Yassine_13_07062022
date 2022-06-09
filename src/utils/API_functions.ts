@@ -52,7 +52,7 @@ export const updateUserState = async (
       data: JSON.stringify({ firstName, lastName }),
     });
     const status = await response.status;
-    if (status) {
+    if (status === 200) {
       return status;
     }
   } catch (error) {

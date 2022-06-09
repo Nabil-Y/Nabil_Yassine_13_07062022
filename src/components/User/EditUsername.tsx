@@ -20,7 +20,7 @@ const EditUsername = () => {
   const resetForm = () => {
     setNewFirstName("");
     setNewLastName("");
-    setIsEditingName((prevState) => !prevState);
+    setIsEditingName(false);
   };
 
   const submitHandler = async (event: React.SyntheticEvent) => {
@@ -75,8 +75,8 @@ const EditUsername = () => {
               type="button"
               className=" w-40 no-underline"
               onClick={() => {
-                setIsEditingName((prevState) => !prevState);
                 resetForm();
+                setIsEditingName(false);
               }}
             >
               Cancel
@@ -91,7 +91,7 @@ const EditUsername = () => {
         <Button
           type="button"
           className="mx-auto w-auto p-[10px] text-sm no-underline"
-          onClick={() => setIsEditingName((prevState) => !prevState)}
+          onClick={() => setIsEditingName(true)}
         >
           Edit Name
         </Button>

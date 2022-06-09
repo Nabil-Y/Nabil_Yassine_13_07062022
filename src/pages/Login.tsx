@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../store/hooks";
 import LoginForm from "../components/Login/LoginForm";
 
 /**
@@ -5,6 +8,13 @@ import LoginForm from "../components/Login/LoginForm";
  * @returns the login page
  */
 const Login = () => {
+  const isLoggedIn = useAppSelector((state) => state.login.isLoggedIn);
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (isLoggedIn) return navigate("/user");
+  }, []);
+
   return (
     <main className="flex-[1] bg-secondary-dark">
       <LoginForm />

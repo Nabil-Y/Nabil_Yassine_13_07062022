@@ -1,5 +1,8 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ProfileHero from "../components/User/ProfileHero";
 import UserAccount from "../components/User/UserAccount";
+import { useAppSelector } from "../store/hooks";
 import { IuserAccount } from "../types";
 
 /**
@@ -24,6 +27,13 @@ const User = () => {
       text: "Current Balance",
     },
   ];
+  const isLoggedIn = useAppSelector((state) => state.login.isLoggedIn);
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (!isLoggedIn) return navigate("/login");
+  }, []);
+
   return (
     <main className=" flex-[1] bg-secondary-dark">
       <ProfileHero />
