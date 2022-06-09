@@ -17,7 +17,7 @@ export const userLogin = async (email: string, password: string) => {
   }
 };
 
-export const getUserData = async (token: string) => {
+export const getUserState = async (token: string) => {
   try {
     const response = await axios(`${baseURL}/user/profile`, {
       method: "POST",
@@ -36,7 +36,7 @@ export const getUserData = async (token: string) => {
   }
 };
 
-export const updateUserData = async (
+export const updateUserState = async (
   token: string,
   firstName: string,
   lastName: string

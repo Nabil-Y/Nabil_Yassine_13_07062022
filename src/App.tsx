@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import User from "./pages/User";
 import Error from "./pages/Error";
 import { Provider } from "react-redux";
-import { store } from "./store/redux";
+import { store } from "./store/store";
 
 /**
  * App function

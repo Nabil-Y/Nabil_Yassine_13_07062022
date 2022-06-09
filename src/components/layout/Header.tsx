@@ -1,15 +1,24 @@
 import logo from "../../assets/argentBankLogo.png";
 import userIcon from "../../assets/icon-user.png";
 import logoutIcon from "../../assets/icon-logout.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { logout } from "../../store/slices/loginSlice";
 
 /**
  * Header function
  * @returns the header component
  */
 const Header = () => {
-  const { pathname } = useLocation();
-  const isUserPage = pathname === "/user";
+  const isLoggedIn = useAppSelector((state) => state.login.isLoggedIn);
+  const firstName = useAppSelector((state) => state.user.firstName);
+  const dispatch = useAppDispatch();
+  let navigate = useNavigate();
+
+  const clickHandler = () => {
+    dispatch(logout());
+    navigate("/");
+  };
 
   return (
     <header>
@@ -28,21 +37,21 @@ const Header = () => {
         <div className="flex items-center">
           <Link to="/user" className="flex">
             <img src={userIcon} alt="User Icon" className="h-6 w-6" />
-            {isUserPage ? <div className="mr-6">Tony</div> : ""}
+            {isLoggedIn ? <div className="mr-6">{firstName}</div> : ""}
           </Link>
-          <Link
-            className="mr-2 flex flex-wrap items-center font-bold hover:underline"
-            to="/login"
-          >
-            {isUserPage ? (
-              <div className="flex items-center">
+          <div className="mr-2 flex flex-wrap items-center font-bold hover:underline">
+            {isLoggedIn ? (
+              <div className="flex items-center" onClick={clickHandler}>
                 <img src={logoutIcon} alt="Log Out Icon" className=" h-6 w-6" />
                 Sign out
               </div>
             ) : (
-              "Sign In"
+              <Link to="/login">
+                {" "}
+                <div>Sign In</div>
+              </Link>
             )}
-          </Link>
+          </div>
         </div>
       </nav>
     </header>
