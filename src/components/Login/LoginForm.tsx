@@ -16,9 +16,14 @@ import Input from "../UI/Input";
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isError, setIsError] = useState(false);
   const dispatch = useAppDispatch();
   let navigate = useNavigate();
 
+  /**
+   * Submit Handler contains tasks to perform after submitting a form
+   * @param event Submit event
+   */
   const submitHandler = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
@@ -28,6 +33,8 @@ const LoginForm = () => {
       const userData = await getUserState(token);
       userData && dispatch(getUserData(userData));
       navigate("/user");
+    } else {
+      setIsError(true);
     }
   };
 
@@ -40,20 +47,23 @@ const LoginForm = () => {
           id="username"
           label="Username"
           type="text"
-          onChange={(event) =>
-            setUsername((event.target as HTMLInputElement).value)
-          }
+          onChange={(event) => setUsername(event.target.value)}
         />
         <Input
           id="password"
           label="Password"
           type="password"
-          onChange={(event) =>
-            setPassword((event.target as HTMLInputElement).value)
-          }
+          onChange={(event) => setPassword(event.target.value)}
         />
         <Checkbox id="remember-me" label="Remember me" />
         <Button type="submit">Sign In</Button>
+        {isError ? (
+          <div className=" translate-y-3 text-sm text-red-500">
+            Wrong username or password
+          </div>
+        ) : (
+          <div className=" select-none text-sm opacity-0">Placeholder</div>
+        )}
       </form>
     </section>
   );

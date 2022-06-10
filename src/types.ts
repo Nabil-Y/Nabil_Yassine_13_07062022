@@ -90,7 +90,7 @@ export interface Iinput {
   /**
    * Change event handler
    */
-  onChange?: React.ChangeEventHandler<HTMLElement>;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   /**
    * Optional unique key for mapping
    */

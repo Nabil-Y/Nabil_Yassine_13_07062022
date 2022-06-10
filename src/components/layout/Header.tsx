@@ -15,6 +15,9 @@ const Header = () => {
   const dispatch = useAppDispatch();
   let navigate = useNavigate();
 
+  /**
+   * Click Handler contains tasks to perform after a click event
+   */
   const clickHandler = () => {
     dispatch(logout());
     navigate("/");

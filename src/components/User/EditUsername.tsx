@@ -17,12 +17,19 @@ const EditUsername = () => {
   const userState = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
 
-  const resetForm = () => {
+  /**
+   * Resets the edit username form in /user page
+   */
+  const resetUsernameForm = () => {
     setNewFirstName("");
     setNewLastName("");
     setIsEditingName(false);
   };
 
+  /**
+   * Submit Handler contains tasks to perform after submitting a form
+   * @param event Submit event
+   */
   const submitHandler = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
@@ -44,7 +51,7 @@ const EditUsername = () => {
         })
       );
     }
-    resetForm();
+    resetUsernameForm();
   };
 
   return (
@@ -56,18 +63,14 @@ const EditUsername = () => {
               id="firstname"
               label="Change firstname"
               type="text"
-              onChange={(event) =>
-                setNewFirstName((event.target as HTMLInputElement).value)
-              }
+              onChange={(event) => setNewFirstName(event.target.value)}
             />
             <div className="mr-4"></div>
             <Input
               id="lastname"
               label="Change lastname"
               type="text"
-              onChange={(event) =>
-                setNewLastName((event.target as HTMLInputElement).value)
-              }
+              onChange={(event) => setNewLastName(event.target.value)}
             />
           </div>
           <div className="flex items-center justify-between">
@@ -75,7 +78,7 @@ const EditUsername = () => {
               type="button"
               className=" w-40 no-underline"
               onClick={() => {
-                resetForm();
+                resetUsernameForm();
                 setIsEditingName(false);
               }}
             >
