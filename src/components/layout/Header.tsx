@@ -38,7 +38,7 @@ const Header = () => {
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
         <div className="flex items-center">
-          <Link to="/user" className="flex">
+          <Link to="/profile" className="flex">
             <img src={userIcon} alt="User Icon" className="h-6 w-6" />
             {isLoggedIn ? <div className="mr-6">{firstName}</div> : ""}
           </Link>

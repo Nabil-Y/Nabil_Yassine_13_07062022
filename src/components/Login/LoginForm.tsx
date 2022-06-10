@@ -32,7 +32,7 @@ const LoginForm = () => {
       dispatch(login(token));
       const userData = await getUserState(token);
       userData && dispatch(getUserData(userData));
-      navigate("/user");
+      navigate("/profile");
     } else {
       setIsError(true);
     }
