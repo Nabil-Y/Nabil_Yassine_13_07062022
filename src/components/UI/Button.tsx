@@ -7,7 +7,7 @@ import { Ibutton } from "../../types";
  */
 const Button = (props: Ibutton) => {
   const { onClick, children, className, type } = props;
-  const baseClasses =
+  const baseClasses: string =
     "mt-4 block w-full bg-primary p-2 text-lg font-bold text-white underline";
   return (
     <button

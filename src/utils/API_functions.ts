@@ -1,4 +1,5 @@
 import axios from "axios";
+import { userState } from "../types";
 
 const baseURL = "http://localhost:3001/api/v1";
 
@@ -14,7 +15,7 @@ export const userLogin = async (email: string, password: string) => {
       email: email,
       password: password,
     });
-    const token = await response.data.body.token;
+    const token: string = await response.data.body.token;
     if (token) {
       return token;
     }
@@ -38,7 +39,7 @@ export const getUserState = async (token: string) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    const data = await response.data.body;
+    const data: userState = await response.data.body;
     if (data) {
       return data;
     }

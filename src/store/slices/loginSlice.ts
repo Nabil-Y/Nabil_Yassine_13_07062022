@@ -14,7 +14,7 @@ const initialState: loginState = {
  */
 export const loginSlice = createSlice({
   name: "login",
-  initialState: initialState,
+  initialState,
   reducers: {
     login: (state: loginState, action: PayloadAction<string>) => {
       state.isLoggedIn = true;
