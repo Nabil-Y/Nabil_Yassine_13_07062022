@@ -15,7 +15,7 @@ const UserAccount = (props: IuserAccount) => {
         <p className="text-[2.5rem] font-bold leading-[46px]">{amount}</p>
         <p>{text}</p>
       </div>
-      <div className="w-full user:flex-[0]">
+      <div className="mr-4 w-full user:flex-[0]">
         <Button type="button" className="no-underline shadow user:w-[200px]">
           View Transactions
         </Button>

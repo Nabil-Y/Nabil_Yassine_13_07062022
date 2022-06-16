@@ -58,14 +58,14 @@ const EditUsername = () => {
     <>
       {isEditingName ? (
         <form className="mx-auto max-w-[300px]" onSubmit={submitHandler}>
-          <div className="flex items-center justify-evenly">
+          <div className="flex flex-wrap items-center justify-center sm:flex-nowrap">
             <Input
               id="firstname"
               label="Change firstname"
               type="text"
               onChange={(event) => setNewFirstName(event.target.value)}
             />
-            <div className="mr-4"></div>
+            <div className="sm:mr-4"></div>
             <Input
               id="lastname"
               label="Change lastname"
@@ -73,7 +73,7 @@ const EditUsername = () => {
               onChange={(event) => setNewLastName(event.target.value)}
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-center sm:flex-nowrap sm:justify-between">
             <Button
               type="button"
               className=" w-40 no-underline"
@@ -84,7 +84,7 @@ const EditUsername = () => {
             >
               Cancel
             </Button>
-            <div className="mr-4"></div>
+            <div className="sm:mr-4"></div>
             <Button type="submit" className=" w-40 no-underline">
               Save
             </Button>
